@@ -32,8 +32,7 @@ class StopwatchViewController: UIViewController {
     }
     
     private func timerStart(){
-        seconds = 0
-        timerLabel.text = "00:00:00"
+
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
 
        }
@@ -50,15 +49,26 @@ class StopwatchViewController: UIViewController {
 
     }
     @IBAction func lapButtonClicked() {
-       
-        var timerStruct = TimerStruct(timerValue: timerLabel.text ?? "00:00:00", lapCount: String(lapcount))
-        timerArray.append(timerStruct)
-        lapcount += lapcount
+        if timerStarted {
+            let lapCount = "Lap " + String(lapcount)
+            var timerStruct = TimerStruct(timerValue: timerLabel.text ?? "00:00:00", lapCount: lapCount)
+            timerArray.append(timerStruct)
+            timerTableView.reloadData()
+            lapcount += 1
+        }else{
+            lapButton.setTitle("Lap", for: .normal)
+            seconds = 0
+            lapcount = 1
+            timerLabel.text = "00:00:00"
+            lapButton.isEnabled = false
+            timerArray.removeAll()
+            timerTableView.reloadData()
+        }
     }
     
     private func stopTimer(){
         startTimerBtn.setTitle("Start", for: .normal)
-        lapButton.isEnabled = false
+        lapButton.setTitle("Reset", for: .normal)
         timer.invalidate()
         timerStarted = false
     }
