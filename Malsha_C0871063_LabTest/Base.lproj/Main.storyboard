@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Myf-dR-6dk">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Malsha_C0871063_LabTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-731" y="147"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="ykd-SI-q2b">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="jLa-Yw-VSw" customClass="TimerViewController" customModule="Malsha_C0871063_LabTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYo-HA-QYl">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WNC-MJ-fav"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" catalog="system" id="dzQ-Sf-wbt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Kb-hQ-sBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="434"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="cLP-lB-TZU">
+            <objects>
+                <viewController storyboardIdentifier="StopwatchViewController" id="25r-r7-tX5" customClass="StopwatchViewController" customModule="Malsha_C0871063_LabTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4fK-AF-ikZ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egf-4H-p7D">
+                                <rect key="frame" x="60" y="127" width="270" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-m2-0N5">
+                                <rect key="frame" x="50" y="237" width="290" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-sk-hgW">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="50"/>
+                                        <color key="backgroundColor" red="0.48496306426514257" green="0.54228880054559248" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTimerButtonClicked" destination="25r-r7-tX5" eventType="touchUpInside" id="wEA-4K-nB7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-km-tX6">
+                                        <rect key="frame" x="155" y="0.0" width="135" height="50"/>
+                                        <color key="backgroundColor" red="0.48496306430000002" green="0.54228880049999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Lap">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lapButtonClicked" destination="25r-r7-tX5" eventType="touchUpInside" id="3GW-1A-DO5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aR3-m2-auq"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R55-A1-cZ3">
+                                <rect key="frame" x="20" y="317" width="350" height="424"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimerCell" rowHeight="67" id="jD3-yE-ydM" customClass="TimerCell" customModule="Malsha_C0871063_LabTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="350" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jD3-yE-ydM" id="leU-g4-XQK">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wWZ-7V-jqE">
+                                                    <rect key="frame" x="25" y="16" width="300" height="35"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwD-VS-cDr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="35"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-5f-eNg">
+                                                            <rect key="frame" x="160" y="0.0" width="140" height="35"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.48496306430000002" green="0.54228880049999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wWZ-7V-jqE" secondAttribute="trailing" constant="5" id="Zg7-jC-hhb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wWZ-7V-jqE" secondAttribute="bottom" constant="5" id="bBg-aA-Nk3"/>
+                                                <constraint firstItem="wWZ-7V-jqE" firstAttribute="top" secondItem="leU-g4-XQK" secondAttribute="topMargin" constant="5" id="mDF-YQ-AIa"/>
+                                                <constraint firstItem="wWZ-7V-jqE" firstAttribute="leading" secondItem="leU-g4-XQK" secondAttribute="leadingMargin" constant="5" id="pXX-Hl-W9d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lapCountLabel" destination="XTQ-5f-eNg" id="r4u-Lj-21W"/>
+                                            <outlet property="timerValueLabel" destination="zwD-VS-cDr" id="H3j-Y1-wxG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Phg-8d-517"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="ecK-m2-0N5" firstAttribute="leading" secondItem="Phg-8d-517" secondAttribute="leading" constant="50" id="20h-M9-MlQ"/>
+                            <constraint firstItem="egf-4H-p7D" firstAttribute="leading" secondItem="Phg-8d-517" secondAttribute="leading" constant="60" id="Fly-JD-yPv"/>
+                            <constraint firstItem="Phg-8d-517" firstAttribute="trailing" secondItem="ecK-m2-0N5" secondAttribute="trailing" constant="50" id="aBh-uU-e6j"/>
+                            <constraint firstItem="Phg-8d-517" firstAttribute="bottom" secondItem="R55-A1-cZ3" secondAttribute="bottom" constant="20" id="bqr-1V-aS0"/>
+                            <constraint firstItem="ecK-m2-0N5" firstAttribute="top" secondItem="egf-4H-p7D" secondAttribute="bottom" constant="50" id="f4g-Ul-kDI"/>
+                            <constraint firstItem="R55-A1-cZ3" firstAttribute="leading" secondItem="Phg-8d-517" secondAttribute="leading" constant="20" id="f7u-q3-O5I"/>
+                            <constraint firstItem="egf-4H-p7D" firstAttribute="top" secondItem="Phg-8d-517" secondAttribute="top" constant="80" id="s4g-jm-7FD"/>
+                            <constraint firstItem="R55-A1-cZ3" firstAttribute="top" secondItem="ecK-m2-0N5" secondAttribute="bottom" constant="30" id="wiT-dH-WnL"/>
+                            <constraint firstItem="Phg-8d-517" firstAttribute="trailing" secondItem="R55-A1-cZ3" secondAttribute="trailing" constant="20" id="x4I-5b-ZtD"/>
+                            <constraint firstItem="Phg-8d-517" firstAttribute="trailing" secondItem="egf-4H-p7D" secondAttribute="trailing" constant="60" id="xgb-L0-3QG"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch" catalog="system" id="bai-ap-UfM"/>
+                    <connections>
+                        <outlet property="lapButton" destination="jfh-km-tX6" id="gil-4N-Yf4"/>
+                        <outlet property="startTimerBtn" destination="PBD-sk-hgW" id="uS1-dO-dbc"/>
+                        <outlet property="timerLabel" destination="egf-4H-p7D" id="Dsc-FE-Eqe"/>
+                        <outlet property="timerTableView" destination="R55-A1-cZ3" id="kLu-yt-QAU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cN-VX-wCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="-295.02369668246445"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3ii-JM-Ger">
+            <objects>
+                <tabBarController id="Myf-dR-6dk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sgo-BX-75O">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="25r-r7-tX5" kind="relationship" relationship="viewControllers" id="luX-L5-uo1"/>
+                        <segue destination="jLa-Yw-VSw" kind="relationship" relationship="viewControllers" id="9PN-6U-owt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sh2-0a-G7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="9"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
