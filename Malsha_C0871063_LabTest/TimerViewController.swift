@@ -14,6 +14,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var cencelButton: UIButton!
     @IBOutlet weak var timerPicker: UIPickerView!
+    
     var timer = Timer()
     var seconds = 0
     var selectedSeconds = 0
@@ -31,13 +32,6 @@ class TimerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         player?.stop()
     }
-
-    private func timerStart(){
-        timerLabel.isHidden = false
-        timerPicker.isHidden = true
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-
-   }
 
     @IBAction func startTimerButtonClicked() {
         if timerStarted {
@@ -64,10 +58,18 @@ class TimerViewController: UIViewController {
 
     }
 
+    //MARK: Timer Function
+    private func timerStart(){
+        timerLabel.isHidden = false
+        timerPicker.isHidden = true
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+   }
+    
     @objc func timerAction(){
         if seconds == 0 && timerStarted {
             playSound()
             timer.invalidate()
+            startTimerBtn.setTitle("Start", for: .normal)
             let alert = UIAlertController(title:"Time" , message:"Your time is up!" , preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .cancel)
             alert.addAction(action)
@@ -84,8 +86,7 @@ class TimerViewController: UIViewController {
         let seconds = Int(time) % 60
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
-    
-    
+        
     //MARK: Player Function
     func playSound() {
         player?.stop()
@@ -107,7 +108,7 @@ class TimerViewController: UIViewController {
     }
 }
 
-
+//MARK: Picker Delegate Function
 extension TimerViewController :  UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 4

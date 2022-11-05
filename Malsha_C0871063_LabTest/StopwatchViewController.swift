@@ -31,12 +31,6 @@ class StopwatchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    private func timerStart(){
-
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-
-       }
-    
     @IBAction func startTimerButtonClicked() {
         if timerStarted {
             stopTimer()
@@ -66,6 +60,11 @@ class StopwatchViewController: UIViewController {
             timerTableView.reloadData()
         }
     }
+    
+    //MARK: Timer Function
+    private func timerStart(){
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+       }
     
     private func stopTimer(){
         startTimerBtn.setTitle("Start", for: .normal)
@@ -99,6 +98,7 @@ class StopwatchViewController: UIViewController {
 
 }
 
+//MARK: TableView Delegate Function
 extension StopwatchViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,10 +107,10 @@ extension StopwatchViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell") as! TimerCell
+
         cell.timerValueLabel?.text = timerArray[indexPath.row].timerValue
         cell.lapCountLabel?.text = timerArray[indexPath.row].lapCount
         
         return cell
-        
     }
 }
