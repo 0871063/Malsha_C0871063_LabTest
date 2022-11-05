@@ -48,10 +48,11 @@ class StopwatchViewController: UIViewController {
         }
 
     }
+    
     @IBAction func lapButtonClicked() {
         if timerStarted {
             let lapCount = "Lap " + String(lapcount)
-            var timerStruct = TimerStruct(timerValue: timerLabel.text ?? "00:00:00", lapCount: lapCount)
+            let timerStruct = TimerStruct(timerValue: timerLabel.text ?? "00:00:00", lapCount: lapCount)
             timerArray.append(timerStruct)
             timerTableView.reloadData()
             lapcount += 1

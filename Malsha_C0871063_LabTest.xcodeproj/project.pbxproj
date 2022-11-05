@@ -16,6 +16,9 @@
 		2CB5229E2915CB8800EA5774 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5229D2915CB8800EA5774 /* StopwatchViewController.swift */; };
 		2CB522A02915D13B00EA5774 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5229F2915D13B00EA5774 /* TimerCell.swift */; };
 		2CB522A22915D1A800EA5774 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB522A12915D1A800EA5774 /* Timer.swift */; };
+		2CB522A42915E37000EA5774 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CB522A32915E37000EA5774 /* alarm.wav */; };
+		2CB522A62915E5FC00EA5774 /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CB522A52915E5FC00EA5774 /* clap.wav */; };
+		2CB522A82915E67500EA5774 /* alarm2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CB522A72915E67500EA5774 /* alarm2.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		2CB5229D2915CB8800EA5774 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		2CB5229F2915D13B00EA5774 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		2CB522A12915D1A800EA5774 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		2CB522A32915E37000EA5774 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
+		2CB522A52915E5FC00EA5774 /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
+		2CB522A72915E67500EA5774 /* alarm2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				2CB522892915C8F700EA5774 /* AppDelegate.swift */,
+				2CB522A32915E37000EA5774 /* alarm.wav */,
+				2CB522A52915E5FC00EA5774 /* clap.wav */,
+				2CB522A72915E67500EA5774 /* alarm2.wav */,
 				2CB5228B2915C8F700EA5774 /* SceneDelegate.swift */,
 				2CB5228D2915C8F700EA5774 /* TimerViewController.swift */,
 				2CB5228F2915C8F700EA5774 /* Main.storyboard */,
@@ -134,8 +143,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB522A62915E5FC00EA5774 /* clap.wav in Resources */,
+				2CB522A82915E67500EA5774 /* alarm2.wav in Resources */,
 				2CB522962915C8F900EA5774 /* LaunchScreen.storyboard in Resources */,
 				2CB522932915C8F900EA5774 /* Assets.xcassets in Resources */,
+				2CB522A42915E37000EA5774 /* alarm.wav in Resources */,
 				2CB522912915C8F700EA5774 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

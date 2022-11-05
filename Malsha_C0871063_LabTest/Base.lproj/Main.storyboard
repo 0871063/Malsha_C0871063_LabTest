@@ -16,17 +16,95 @@
                     <view key="view" contentMode="scaleToFill" id="cYo-HA-QYl">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-Hh-6sr">
+                                <rect key="frame" x="90" y="362" width="210" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-0v-vXC">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.51221727526064997" green="0.38806480049214503" blue="0.26936227921695521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="EOB-Lm-lHb"/>
+                                            <constraint firstAttribute="height" constant="80" id="RTs-FZ-zhI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cencelTimer" destination="jLa-Yw-VSw" eventType="touchUpInside" id="ka7-De-jhN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-kK-dMV">
+                                        <rect key="frame" x="130" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.75634262242268036" green="0.55351585820967142" blue="0.21476117454145563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="6Yg-gb-KbI"/>
+                                            <constraint firstAttribute="height" constant="80" id="moh-Ry-JJv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startTimerButtonClicked" destination="jLa-Yw-VSw" eventType="touchUpInside" id="4eh-ta-apZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhi-Vc-pRC">
+                                <rect key="frame" x="60" y="177" width="270" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ5-3d-zC9">
+                                <rect key="frame" x="20" y="107" width="350" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jLa-Yw-VSw" id="vzd-7f-Jwq"/>
+                                    <outlet property="delegate" destination="jLa-Yw-VSw" id="HOl-MP-0fq"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WNC-MJ-fav"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="mhi-Vc-pRC" firstAttribute="leading" secondItem="WNC-MJ-fav" secondAttribute="leading" constant="60" id="8Pv-Rj-dEH"/>
+                            <constraint firstItem="vb8-Hh-6sr" firstAttribute="centerX" secondItem="WNC-MJ-fav" secondAttribute="centerX" id="8UB-CS-CRR"/>
+                            <constraint firstItem="WNC-MJ-fav" firstAttribute="trailing" secondItem="mhi-Vc-pRC" secondAttribute="trailing" constant="60" id="Jdf-Zi-KnT"/>
+                            <constraint firstItem="WNC-MJ-fav" firstAttribute="trailing" secondItem="VJ5-3d-zC9" secondAttribute="trailing" constant="20" id="MjG-3f-gGT"/>
+                            <constraint firstItem="mhi-Vc-pRC" firstAttribute="top" secondItem="WNC-MJ-fav" secondAttribute="top" constant="130" id="OWd-6y-npM"/>
+                            <constraint firstItem="VJ5-3d-zC9" firstAttribute="leading" secondItem="WNC-MJ-fav" secondAttribute="leading" constant="20" id="Pl4-3q-PpU"/>
+                            <constraint firstItem="VJ5-3d-zC9" firstAttribute="top" secondItem="WNC-MJ-fav" secondAttribute="top" constant="60" id="Rbn-Cg-Ejy"/>
+                            <constraint firstItem="vb8-Hh-6sr" firstAttribute="top" secondItem="VJ5-3d-zC9" secondAttribute="bottom" constant="39" id="pAM-EK-vze"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" id="dzQ-Sf-wbt">
                         <imageReference key="image" image="timer" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="cencelButton" destination="xfY-0v-vXC" id="D7m-C8-i7M"/>
+                        <outlet property="startTimerBtn" destination="gvq-kK-dMV" id="GYI-UA-f9Q"/>
+                        <outlet property="timerLabel" destination="mhi-Vc-pRC" id="EdS-tr-Hng"/>
+                        <outlet property="timerPicker" destination="VJ5-3d-zC9" id="fpo-C8-g8i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kb-hQ-sBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="434"/>
+            <point key="canvasLocation" x="1060" y="433.64928909952607"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="cLP-lB-TZU">
